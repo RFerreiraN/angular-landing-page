@@ -8,7 +8,7 @@ import { ProductoDetalleComponent } from './producto-detalle/producto-detalle.co
 const routes: Routes = [
   { path: '', component : HomeComponent },
   { path : 'productos' , component : ProductosComponent },
-  { path : 'productos/:productoID' , component : ProductoDetalleComponent},
+  { path : 'productos/:categoria/:productoId' , component : ProductoDetalleComponent},
   { path : 'contacto' , component : ContactoComponent },
   { path : '**' , redirectTo : ''}
 ];
