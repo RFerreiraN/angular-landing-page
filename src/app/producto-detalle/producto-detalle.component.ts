@@ -1,5 +1,5 @@
 import { Component , OnInit} from '@angular/core';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-producto-detalle',
@@ -7,12 +7,17 @@ import { Router } from '@angular/router';
   styleUrls: ['./producto-detalle.component.css']
 })
 export class ProductoDetalleComponent implements OnInit{
-   
+    nombreProducto : string = '';
+    colorProducto: string = '';
+
     constructor(
-      private _router : Router
+      private _router : ActivatedRoute
     ){}
      
     ngOnInit(): void {
-      this._router.navigate
+      this._router.params.subscribe( params => {
+        this.nombreProducto = params['productoId']
+        this.colorProducto = params['categoria']
+      })
     }
 }
